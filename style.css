@@ -1,0 +1,293 @@
+/* Reset */
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #efe6dd;
+    color:#2c1b0c;
+    line-height: 1.6;
+}
+
+header {
+    background:#4e342e;
+    color:#fff;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight:bold;
+}
+
+/* ===== Default: Desktop ===== */
+nav ul {
+    list-style:none;
+    display:flex; /* tampil di desktop */
+    gap:20px;
+    position: static;
+    flex-direction: row;
+    background: none;
+    width: auto;
+    padding: 0;
+}
+
+nav ul li a {
+    color:#fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color:#d7ccc8;
+}
+
+/* Burger default hilang */
+.burger {
+    display:none;
+    font-size: 1.8rem;
+    cursor:pointer;
+}
+
+/* Hero */
+.hero {
+    background: url('images/2kopi.jpeg')no-repeat center center/cover;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color:#fff;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom:10px;
+}
+
+.hero p {
+    font-size:1.2rem;
+    max-width:600px;
+}
+
+section {
+    padding:60px 40px;
+}
+
+section h2 {
+    text-align:center;
+    font-size:2rem;
+    margin-bottom:30px;
+    color:#3e2723;
+}
+
+#menu {
+    padding:40;
+    text-align: center;
+}
+
+#menu h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Cards */
+.cards {
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card {
+    background-color: #fff;
+    padding:20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 250px;
+}
+
+.card img {
+    width:100px;
+    height:100px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card p{
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color:#6d4c41;
+}
+
+.card button {
+    padding:10px 20px;
+    background: #6d4c41;
+    border:none;
+    color:#fff;
+    border-radius: 8px;
+    cursor:pointer;
+    transition: background 0.3s;
+}
+
+.card button:hover {
+    background: #3e2723;
+}
+
+.contact-container {
+    display:flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; 
+    margin-top:30px;
+}
+
+.contact-form {
+    flex:1;
+    background: #fff;
+    padding:20px;
+    border-radius:15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.contact-form h3 {
+    margin-bottom:15px;
+    color:#3e2723
+}
+
+.contact-form label {
+    display:block;
+    margin:10px 0 5px;
+    font-weight:500;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width:100%;
+    padding:10px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    margin-bottom:15px
+}
+
+.contact-form button {
+    padding: 12px 20px;
+    background: #6d4c41;
+    border:none;
+    color:#fff;
+    border-radius: 8px;
+    cursor:pointer;
+    transition: background 0.3s;
+}
+
+/* hilangkan scrollbar (opsional) */
+.cards:-webkit-scrollbar {
+    display:none;
+}
+
+.contact-form button:hover {
+    background: #3e2723;
+}
+
+.map-container {
+    flex:1 1 350px;
+}
+
+.map-container iframe {
+    width:100%;
+    height:100px;
+    border:0;
+    border-radius: 15px;
+    min-height:300px;
+}
+
+.social-icons {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.social-icons a {
+  display: inline-block;
+  background: #6d4c41;
+  color: white;
+  font-size: 20px;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: #ffcc00;
+  color: #6d4c41;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive untuk mobile */
+@media (max-width: 768px) {
+  .cards {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  nav ul {
+    display:none; /* menu hilang di mobile */
+    flex-direction:column;
+    background: #6d4c41;
+    position: absolute;
+    top:60px;
+    right:0;
+    width:200px;
+    padding:15px;
+  }
+
+  nav ul.show {
+    display:flex; /* muncul saat burger diklik */
+  }
+
+  .burger {
+    display:block; /* burger tampil di mobile */
+  }
+}
+
+.hero {
+    padding:80px 20px;
+}
+
+footer { 
+    background:#4e342e;
+    color:#fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
